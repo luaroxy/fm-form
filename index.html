@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
-</head>
-<body>
-    
-</body>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="leftContainer">
+        <h1>Learn to code by watching others</h1>
+
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+
+      <div class="rightContainer">
+        <div class="freeMessage">
+          <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+        </div>
+
+        <div class="formContainer">
+          <form id="signUpForm">
+            <input type="text" name="name" placeholder="Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+            <input type="text" name="country" placeholder="Country" required />
+            <input type="text" name="zipCode" placeholder="Zip Code" required />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              required
+            />
+            <button type="submit" id="submitBtn">CLAIM YOUR FREE TRIAL</button>
+            <p>
+              By clicking the button, you are agreeing to our
+              <span>Terms and Services</span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p class="attribution">
+        Challenge addapted from
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/luaroxy">Lua</a>.
+      </p>
+    </footer>
+  </body>
 </html>

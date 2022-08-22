@@ -1,0 +1,152 @@
+/* maybe have a structure to your css declaration block */
+/* to enable you find what you want to change easily */
+/* i've included a notes.md file containing the examples */
+
+/* avoid using pixels exect for really small things like borders */
+/* use rem instead */
+
+/* <!-- USE THE BEM METHOD FOR CLASSNAMES, AVOID IDS except for maybe js --> */
+/* <!-- you can maybe use data- attributes to target elements in js --> */
+
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --darkBlue: hsl(249, 10%, 26%);
+  --greyishBlue: hsl(246, 25%, 77%);
+  --clr-neutral: hsl(0 0 100%);
+  --ff-primary: "Poppins", sans-serif;
+  --fw-300:300;
+  --fw-400:400;
+  --fw-500:500;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: var(--b-radius);
+  outline: none;
+  background: transparent;
+  font: inherit;
+  letter-spacing: var(--spacing);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  mix-blend-mode: normal;
+  cursor: pointer;
+  transition: var(--transition, all 0.2s ease);
+}
+
+body {
+  width: 100vw;
+  /* height: 100vh; */
+  min-height: 100vh; /* or min-height: 100%; */
+  background-image: url(images/bg-intro-desktop.png);
+  background-color: var(--red);
+  font-family: var(--ff-primary);
+  font-size: 15px; 
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  gap: 5vw;
+  height: 100%;
+  padding: 15vh 15vw;
+}
+
+.header {
+  gap: 5vh;
+  color: var(--clr-neutral);
+}
+.header > .header__title {
+  font-size: 3rem;
+  font-weight: var(--fw-700);
+}
+.header > .header__info {
+  display: flex;
+  flex-direction: column;
+  font-weight: var(--fw-400);
+}
+
+.cta {
+  gap: 20px;
+}
+.cta__message {
+  padding: 15px;
+  color: var(--clr-neutral);
+  border-radius: 10px;
+  background-color: var(--blue);
+  font-weight: var(--fw-300);
+  text-align: center;
+  box-shadow: 0px 6px 0px #00000029;
+}
+
+.form-container {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: var(--clr-neutral);
+  box-shadow: 0px 6px 0px #00000029;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form > .form-control {
+  padding: 15px;
+  border: 1px solid var(--greyishBlue);
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+.form-control:focus {
+  outline: 1px solid var(--darkBlue);
+}
+.form > .form__button {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  color: var(--clr-neutral);
+  background-color: var(--green);
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+  font-weight: var(--fw-600);
+}
+.form > .cta__info {
+  color: var(--greyishBlue);
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.highlighted {
+  color: var(--red);
+  font-size: 0.6rem;
+  font-weight: var(--fw-700);
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  font-size: 11px;
+}

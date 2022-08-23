@@ -4,62 +4,94 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css" />
     <title>Form</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="container">
-      <div class="leftContainer">
-        <h1>Learn to code by watching others</h1>
 
-        <p>
+  <body>
+    
+    <div class="container">
+      <header class="column header">
+        <h1 class="header__title">Learn to code by watching others</h1>
+
+        <p class="header__info">
           See how experienced developers solve problems in real-time. Watching
           scripted tutorials is great, but understanding how developers think is
           invaluable.
         </p>
-      </div>
+      </header>
 
-      <div class="rightContainer">
-        <div class="freeMessage">
+      <main class="column cta">
+        <!-- this is supposed to be a call-to-action button -->
+        <div class="cta__message">
           <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
         </div>
+        <!--  -->
 
-        <div class="formContainer">
-          <form id="signUpForm">
-            <input type="text" name="name" placeholder="Name" required />
+        <section class="form-container">
+          <form class="form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              class="form-control"
+              required
+            />
             <input
               type="email"
               name="email"
               placeholder="Email Address"
+              class="form-control"
               required
             />
-            <input type="text" name="country" placeholder="Country" required />
-            <input type="text" name="zipCode" placeholder="Zip Code" required />
+            <input
+              type="text"
+              name="country"
+              placeholder="Country"
+              class="form-control"
+              required
+            />
+            <input
+              type="text"
+              name="zipCode"
+              placeholder="Zip Code"
+              class="form-control"
+              required
+            />
             <input
               type="password"
               name="password"
               placeholder="Password"
+              class="form-control"
               required
             />
             <input
               type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
+              class="form-control"
               required
             />
-            <button type="submit" id="submitBtn">CLAIM YOUR FREE TRIAL</button>
-            <p>
+             <!-- OR <button type="submit" class=".btn .btn--submit"> -->
+            <button type="submit" class="form__button">
+              CLAIM YOUR FREE TRIAL
+            </button>
+            <p class="cta__info">
               By clicking the button, you are agreeing to our
-              <span>Terms and Services</span>
+              <span class="highlighted">Terms and Services</span>
             </p>
           </form>
         </div>
-      </div>
+      </main>
     </div>
+
     <footer>
       <p class="attribution">
-        Challenge addapted from
+        Challenge adapted from
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
         >. Coded by <a href="https://github.com/luaroxy">Lua</a>.

@@ -33,7 +33,7 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(../images/bg-intro-desktop.png);
   background-color: var(--red);
   font-family: var(--ff-primary);
@@ -51,7 +51,7 @@ body {
   display: flex;
   gap: 5vw;
   height: 100%;
-  padding: 15vh 15vw;
+  padding: 4vh 15vw;
 }
 
 .header {
@@ -88,13 +88,14 @@ body {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 23px;
 }
-.form > .form-control {
+.form-control {
   padding: 15px;
   border: 1px solid var(--greyishBlue);
   border-radius: 4px;
   font-size: 0.8rem;
+  width: 100%;
 }
 .form-control:focus {
   outline: 1px solid var(--darkBlue);
@@ -132,4 +133,32 @@ body {
 .attribution a {
   color: hsl(228, 45%, 44%);
   font-size: 11px;
+}
+
+.form > div {
+  position: relative;
+}
+
+.help {
+  display: none;
+  position: absolute;
+  font-size: 0.7em;
+  text-align: right;
+  color: var(--red);
+  font-style: italic;
+  font-weight: var(--fw-500);
+  right: 4px;
+}
+
+.invalid .help {
+  display: block;
+}
+
+.invalid input {
+  border: 1px solid var(--red);
+}
+
+.invalid input::placeholder {
+  color: var(--red);
+  font-weight: var(--fw-500);
 }

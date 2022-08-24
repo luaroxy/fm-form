@@ -31,49 +31,73 @@
         </div>
 
         <section class="form-container">
-          <form class="form">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              class="form-control"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              class="form-control"
-              required
-            />
-            <input
-              type="text"
-              name="country"
-              placeholder="Country"
-              class="form-control"
-              required
-            />
-            <input
-              type="text"
-              name="zipCode"
-              placeholder="Zip Code"
-              class="form-control"
-              required
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              class="form-control"
-              required
-            />
-            <input
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              class="form-control"
-              required
-            />
+          <form class="form" id="ctaForm">
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                class="form-control"
+                required
+              />
+              <p class="help">Name cannot be empty</p>
+            </div>
+
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                class="form-control"
+                required
+              />
+              <p class="help">Looks like this is not an email</p>
+            </div>
+
+            <div>
+              <input
+                type="text"
+                name="country"
+                placeholder="Country"
+                class="form-control"
+                required
+              />
+              <p class="help">Country cannot be empty</p>
+            </div>
+
+            <div>
+              <input
+                type="text"
+                name="zipCode"
+                placeholder="Zip Code"
+                class="form-control"
+                required
+              />
+              <p class="help">Looks like this is not a Zip Code</p>
+            </div>
+
+            <div>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                class="form-control"
+                required
+              />
+              <p class="help">Password cannot be empty</p>
+            </div>
+
+            <div>
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                class="form-control"
+                required
+              />
+              <p class="help">The passwords are not matching</p>
+            </div>
+
             <button type="submit" class="form__button">
               CLAIM YOUR FREE TRIAL
             </button>

@@ -35,6 +35,7 @@ const validators = {
   required: (element) => element.value.length > 0,
   noNumbers: (element) => !element.value.match(/[0-9]/g),
   validEmail: (element) => element.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/),
+  isCountry: (element) => countriesList.includes(element.value),
 };
 
 function validateElement(element) {
@@ -94,3 +95,7 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
   }
 });
+
+const countries = Countries.countries;
+countriesList = [];
+Object.values(countries).forEach((element) => countriesList.push(element.name));

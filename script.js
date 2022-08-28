@@ -36,6 +36,7 @@ const validators = {
   noNumbers: (element) => !element.value.match(/[0-9]/g),
   validEmail: (element) => element.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/),
   isCountry: (element) => countriesList.includes(element.value),
+  isZipCode: (element) => element.value.match(/(^\d{5}$)|(NA)/),
 };
 
 function validateElement(element) {

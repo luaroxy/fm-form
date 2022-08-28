@@ -79,8 +79,10 @@
                 placeholder="Zip Code"
                 class="form-control"
                 required
+                data-validate="isZipCode required"
               />
-              <p class="help">Looks like this is not a Zip Code</p>
+              <p class="help" data-validation-message="required">Zip Code cannot be empty</p>
+              <p class="help" data-validation-message="isZipCode">For USA, Zip Code must be five numbers. Otherwise, NA.</p>
             </div>
 
             <div>

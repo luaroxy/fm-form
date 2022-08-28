@@ -150,15 +150,18 @@ body {
   right: 4px;
 }
 
-.invalid .help {
-  display: block;
-}
-
-.invalid input {
+.invalid {
   border: 1px solid var(--red);
 }
 
-.invalid input::placeholder {
+.invalid::placeholder {
   color: var(--red);
   font-weight: var(--fw-500);
+}
+
+[data-validation-message] {
+  display: none;
+}
+[data-validation-message].message-visible {
+  display: block;
 }

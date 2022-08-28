@@ -39,8 +39,10 @@
                 placeholder="Name"
                 class="form-control"
                 required
+                data-validate="noNumbers required"
               />
-              <p class="help">Name cannot be empty</p>
+              <p class="help" data-validation-message="required">Name cannot be empty</p>
+              <p class="help" data-validation-message="noNumbers">Please don't enter any numbers</p>
             </div>
 
             <div>
@@ -50,8 +52,10 @@
                 placeholder="Email Address"
                 class="form-control"
                 required
+                data-validate="validEmail required"
               />
-              <p class="help">Looks like this is not an email</p>
+              <p class="help" data-validation-message="required">Email cannot be empty</p>
+              <p class="help" data-validation-message="validEmail">Looks like this is not an email</p>
             </div>
 
             <div>

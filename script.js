@@ -37,6 +37,9 @@ const validators = {
   validEmail: (element) => element.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/),
   isCountry: (element) => countriesList.includes(element.value),
   isZipCode: (element) => element.value.match(/(^\d{5}$)|(NA)/),
+  minLength: (element) => element.value.length >= 8,
+  mustMatch: (element) =>
+    element.value == document.getElementById("password").value,
 };
 
 function validateElement(element) {

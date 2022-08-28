@@ -42,7 +42,7 @@
                 required
                 data-validate="noNumbers required"
               />
-              <p class="help" data-validation-message="required">Name cannot be empty</p>
+              <p class="help" data-validation-message="required">Please enter your name</p>
               <p class="help" data-validation-message="noNumbers">Please don't enter any numbers</p>
             </div>
 
@@ -55,7 +55,7 @@
                 required
                 data-validate="validEmail required"
               />
-              <p class="help" data-validation-message="required">Email cannot be empty</p>
+              <p class="help" data-validation-message="required">Please enter your email</p>
               <p class="help" data-validation-message="validEmail">Looks like this is not an email</p>
             </div>
 
@@ -68,7 +68,7 @@
                 required
                 data-validate="isCountry required"
               />
-              <p class="help" data-validation-message="required">Country cannot be empty</p>
+              <p class="help" data-validation-message="required">Please enter your country</p>
               <p class="help" data-validation-message="isCountry">Looks like this is not an country</p>
             </div>
 
@@ -81,7 +81,7 @@
                 required
                 data-validate="isZipCode required"
               />
-              <p class="help" data-validation-message="required">Zip Code cannot be empty</p>
+              <p class="help" data-validation-message="required">Please enter your Zip Code</p>
               <p class="help" data-validation-message="isZipCode">For USA, Zip Code must be five numbers. Otherwise, NA.</p>
             </div>
 
@@ -90,10 +90,13 @@
                 type="password"
                 name="password"
                 placeholder="Password"
+                id="password"
                 class="form-control"
                 required
+                data-validate="minLength required"
               />
-              <p class="help">Password cannot be empty</p>
+              <p class="help" data-validation-message="required">Please enter a password</p>
+              <p class="help" data-validation-message="minLength">Please enter at least 8 characters</p>
             </div>
 
             <div>
@@ -103,8 +106,10 @@
                 placeholder="Confirm Password"
                 class="form-control"
                 required
+                data-validate="mustMatch required"
               />
-              <p class="help">The passwords are not matching</p>
+              <p class="help" data-validation-message="required">Please enter the same password</p>
+              <p class="help" data-validation-message="mustMatch">The passwords are not matching</p>
             </div>
 
             <button type="submit" class="form__button">

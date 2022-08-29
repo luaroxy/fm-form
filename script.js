@@ -1,36 +1,3 @@
-/*function validateForm(e) {
-  const form = e.target;
-  const field = Array.from(form.elements);
-
-  // reset fields
-  field.forEach((i) => {
-    i.setCustomValidity("");
-    i.parentElement.classList.remove("invalid");
-  });
-
-  if (!form.checkValidity()) {
-    // form is invalid - cancel submit
-    e.preventDefault();
-    e.stopImmediatePropagation();
-
-    // apply invalid class
-    field.forEach((i) => {
-      if (!i.checkValidity()) {
-        // field is invalid - add class
-        i.parentElement.classList.add("invalid");
-      }
-    });
-  }
-}
-
-const form = document.getElementById("ctaForm");
-form.noValidate = true;
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  validateForm(e);
-});
-*/
-
 const validators = {
   required: (element) => element.value.length > 0,
   noNumbers: (element) => !element.value.match(/[0-9]/g),
@@ -63,16 +30,6 @@ function markElementInvalid(element, validatorName) {
   feedbackMessage.classList.add("message-visible");
 }
 
-const form = document.getElementById("ctaForm");
-form.noValidate = true;
-const formElements = Array.from(form.elements);
-
-formElements.forEach((formElement) => {
-  formElement.addEventListener("blur", () => {
-    validateElement(formElement);
-  });
-});
-
 function resetValidation(element) {
   element.classList.remove("invalid");
   element.parentNode
@@ -81,6 +38,21 @@ function resetValidation(element) {
       e.classList.remove("message-visible");
     });
 }
+
+//Create countriesList to be used in the country input validation
+const countries = Countries.countries; // from library installed in html
+countriesList = [];
+Object.values(countries).forEach((element) => countriesList.push(element.name));
+
+const form = document.getElementById("ctaForm");
+form.noValidate = true;
+const formElements = Array.from(document.querySelectorAll("input"));
+
+formElements.forEach((formElement) => {
+  formElement.addEventListener("blur", () => {
+    validateElement(formElement);
+  });
+});
 
 form.addEventListener("submit", (event) => {
   let formIsValid = true;
@@ -95,11 +67,6 @@ form.addEventListener("submit", (event) => {
   formIsValid = form.querySelectorAll(".invalid").length === 0;
 
   if (formIsValid === false) {
-    form.classList.add("invalid");
     event.preventDefault();
   }
 });
-
-const countries = Countries.countries;
-countriesList = [];
-Object.values(countries).forEach((element) => countriesList.push(element.name));
